@@ -1,0 +1,1 @@
+web: gunicorn nutritioncalculatorg.wsgi --log-file -
