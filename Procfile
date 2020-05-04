@@ -1,1 +1,1 @@
-web: gunicorn nutritioncalculatorg.wsgi --log-file -
+web: gunicorn nutri.wsgi --log-file -
