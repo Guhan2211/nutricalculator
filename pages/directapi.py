@@ -1,8 +1,8 @@
 import requests
 import json
 def callit(inp):
-    APP_ID = "4bbd1ade"
-    APP_KEY = "d51d946d282fff71d41148d3f7f6cff3"
+    APP_ID = "*****"
+    APP_KEY = "*****"
 
     api_endpoint = "https://api.edamam.com/api/nutrition-details"
 
