@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div >
+
+        <img src="{% static 'img/bc.jpg' %}" alt="food" style="width:100%;">
+
+
+
+</div>
+<div class="container pt-3">
+
+
+
+
+    <div class="row">
+        <div class="col">
+            <div class="text-warning">
+                {% if error %}
+                <p><small>*Entered ingridients are incorrect.Please try again.</small></p>
+                {% endif %}
+            </div>
+            <form action="." method="POST">{% csrf_token %}
+                <div class="form-group">
+        
+                 
+        
+                  </div>
+                  {{form.as_p}}
+                  <button  value="submit" type="submit" class="btn btn-primary btn-lg">SUBMIT</button>
+                  <button  type="button" onclick="document.getElementById('id_txt').value='' " class="btn btn-warning btn-lg">CLEAR</button>
+           </form>
+           <p>
+               <small class="text-secondary">
+                *Enter your ingridients comma sepearated one by one.<br/>
+                You can mention quantites like 3 spoon oil ,3kg chicken likeways.
+
+               </small>
+           </p>
+        </div>
+        <div class="col">
+            {%if presence and not error %}
+
+            <table class="table table-sm  pt-2">
+                <tbody>
+                    <tr>
+                      <th colspan="2" class="bg-info" scope="col">Nutrional Facts</th>
+                      
+                    </tr>
+                
+                
+                    
+                    <tr>
+                      <th scope="row">Calories</th>
+                      <th>{{calories}}</th>
+                    </tr>
+        
+                    <tr>
+                        <th></th>
+                        <th>% Daily Value*</th>
+                    </tr>
+        
+                    <tr>
+                        <td><b>Total Fat</b> {{FATQ}}{{FATU}}</td>
+                        <td><b>{{FATUP}}%</b></td> 
+                    </tr>
+
+                    <tr>
+                        <td>    Saturated Fat {{FASATQ}}{{FASATU}}</td>
+                        <td><b>{{FASATP}}%</b></td> 
+                    </tr>
+                    <tr>
+                        <td><b>Cholesterol </b> {{Cholesterolq}}{{Cholesterolu}}</td>
+                        <td><b>{{Cholesterolup}}%</b></td> 
+                    </tr>
+                    <tr>
+                        <td><b>Sodium </b> {{Sodiumq}}{{Sodiumu}}</td>
+                        <td><b>{{Sodiump}}%</b></td> 
+                    </tr>
+                    <tr>
+                        <td><b>Total Carbohydrate </b> {{CARBSQ}}{{CARBSU}}</td>
+                        <td><b>{{CARBSP}}%</b></td> 
+                    </tr> 
+                    <tr>
+                        <td>    Dietary Fiber {{Fiberq}}{{Fiberu}}</td>
+                        <td><b>{{Fiberp}}%</b></td> 
+                    </tr>                    
+                    <tr>
+                        <td><b>Protein  </b> {{PROCNTQ}}{{PROCNTU}}</td>
+                        <td></td>
+                    </tr>
+                  
+                    <tr>
+                        <td>Vitamin D {{vitdq}}{{vitdu}}</td>
+                        <td><b>{{vitdp}}%</b></td> 
+                    </tr>
+                    <tr>
+                        <td>Calcium    {{calcq}}{{calcu}}</td>
+                        <td><b>{{calcp}}%</b></td> 
+                    </tr>                    
+                    <tr>
+                        <td>Iron {{ironq}}{{ironu}}</td>
+                        <td><b>{{ironp}}%</b></td> 
+                    </tr>
+                    <tr>
+                        <td>Potassium  {{potq}}{{potu}}</td>
+                        <td><b>{{potp}}%</b></td> 
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                       <i> *The % Daily Value (DV) tells 
+                        you how much a nutrient in a food serving contributes to a daily diet. 
+                        2,000 calorie a day is used for general nutrition advice.</i>
+                    </td>
+                    
+                    </tr>
+
+                    <tr>
+                        <td colspan="2">
+                        Recipie Analyzed by  Nutrition Calculator <i class="fa fa-heartbeat" aria-hidden="true"></i>
+                    </td>
+                    
+                    </tr>
+
+                </tbody>
+            </table>
+        
+            {% endif %}
+        </div>
+      
+      </div>
+      
+
+</div>
+<div class="container">
+    {%if presence and not error %}
+    
+            
+        <h1>Nutrition  Calculator Results</h1>
+        
+        <h3>Your recipie has {{calories}} calories.</h3>
+        
+        <p>It is {{dietLabels}}</p>
+    
+    
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block content %}
+<div >
+    <img src="{% static 'img/bc.jpg' %}" alt="food" style="width:100%;">
+</div>
+<div class="container pb-2">
+    <h1>Nutrition Calculator</h1>
+    <p>This app analyzes your recipie with the ingridients you provide and replies you with the nutrional facts about your recipie.</p>
+
+    <div>
+        <p><b>Usage instructions:</b></p>
+        <ol>
+            <li>Enter your ingridients one by one with comma separation.</li>
+            <li>You must give quantity as 1kg chicken or 2spoon sugar likeways.If you didn't mention the quantity it will assume for single unit.</li>
+            <li>Click submit button</li>
+            <li>Your recipie's nutrional data will be shown in  table with some facts about it.</li>
+            <li>If you want to edit your recipie you can just click and change it in the textarea.</li>
+        
+        </ol>
+    </div>
+    <div>
+        <h1>About Developer!</h1>
+    <div class="container">
+            <div class="row">
+                <div class="col">
+            <img class="img-thumbnail" src="{% static 'img/guhP.jpg' %}" alt="guhan"/>
+            </div>
+            <div>
+                <h5>GUHAN S</h5>
+                <p>Hy I'm doing my final year of engineering in coimbatore.
+                I love to develop and learn new stuffs. I believe in Think, Imagine and Devlop.
+                I have develpoed different apps using python and angular.
+                You can view my products on<br/>
+                <i href="https://github.com/Guhan2211" class="fa fa-github" aria-hidden="true"></i><a href="https://github.com/Guhan2211"> https://github.com/Guhan2211</a>
+                
+                <br/>
+                <b>Some of my work links:</b>
+                <br/>
+                <ul>
+                    <li><a href="https://guhan.pythonanywhere.com/"> Alvenis-Bus tracker</a></li>
+                    <li><a href="https://guhan2211.github.io/#"> Virtual Diary</a></li>
+                    <li><a href="https://innova-8cef1.firebaseapp.com/"> Innova cell</a></li>
+                </ul>
+
+
+                <b>CONTACT ME ON:</b>
+                <br/>
+                <ul class="nav justify-content-left">
+
+                    <li class="nav-item"><a class="nav-link" href="https://www.instagram.com/__guhan22/"><i class="fa fa-instagram"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="mailto:mailmeguhan98@gmail.com"><i class="fa fa-envelope"></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://github.com/Guhan2211"><i class="fa fa-github"></i></a></li>
+                    </ul>
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+</div>
+
+{% endblock%}
