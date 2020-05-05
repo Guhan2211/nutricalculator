@@ -6,6 +6,7 @@ class CallMet(forms.Form):
     required=True,
     widget=forms.Textarea(
         attrs={
+            "cols":40,
             "id":"id_txt",
             "placeholder":'2kg chicken,2 spoon oil'
         }
