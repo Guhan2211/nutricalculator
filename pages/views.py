@@ -24,10 +24,13 @@ def index(request):
             x=str(data)
             
             x=x[2:-1]
+            if(x[:9]=="<!DOCTYPE"):
+                context={"form":my_form,'error':True}
+                return render(request,"home.html",context)
             try:
-                data = ast.literal_eval(x)
-            except:
                 data=json.loads(x)
+            except:
+                data = ast.literal_eval(x)
             #print(data)
             context={"form":my_form,'presence':True}
             context.update(res(data))
